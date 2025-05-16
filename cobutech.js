@@ -3,16 +3,16 @@ const app = express();
 __path = process.cwd()
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 8000;
-let server = require('./wasiqr'),
-    code = require('./pair');
+let server = require('./cobutechqr'),
+    code = require('./cobuindystrypair');
 require('events').EventEmitter.defaultMaxListeners = 500;
-app.use('/wasiqr', server);
+app.use('/cobutechqr', server);
 app.use('/code', code);
 app.use('/pair',async (req, res, next) => {
 res.sendFile(__path + '/pair.html')
 })
 app.use('/',async (req, res, next) => {
-res.sendFile(__path + '/wasipage.html')
+res.sendFile(__path + '/cobutechpage.html')
 })
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,6 +25,6 @@ Don't Forget To Give Star
 
 module.exports = app
 /**
-    powered by wasi tech team 
-    join Whatsapp channel for more updates 
-    **/
+     powered by cobutecch tech team
+     join Whatsapp channel for more updates
+     **/
